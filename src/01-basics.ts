@@ -3,6 +3,14 @@ interface Friend {
     phone: string;
     age: number
 }
+interface Colleague {
+    name: string;
+    department: string;
+    contact: {
+        email: string;
+        extension: number;
+    }
+}
 
 const friend1 = {
     name: "Paul Fleming",
