@@ -49,3 +49,14 @@ export type BuddyList = {
   members: Buddy[];
 };
 
+export type FriendPartial = Partial<Friend>
+// Type for gaining access to an event, e.g. concert.
+export type EventPass = Omit<Colleague, "contact"> & {
+  passCode : number;
+}
+// Immutable person type, based on Friend type.
+export type SecureFriendContact = Readonly<Pick<Friend,"name" | "phone" > >
+
+export type Intersection = Pick<Friend,"name" | "age"> & {
+  contact: Pick<Colleague["contact"], "email" | "extension">
+}
